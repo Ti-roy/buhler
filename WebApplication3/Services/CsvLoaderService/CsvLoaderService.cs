@@ -1,8 +1,8 @@
-using System.Reflection;
 using Microsoft.VisualBasic.FileIO;
+using WebApplication3.Services.CsvLoader;
 using WebApplication3.Services.FoodTruckService.Models;
 
-namespace WebApplication3.Services.CsvLoader;
+namespace WebApplication3.Services.CsvLoaderService;
 
 public class CsvLoaderService : ICsvLoaderService
 {
@@ -10,7 +10,7 @@ public class CsvLoaderService : ICsvLoaderService
 
     public CsvLoaderService(IWebHostEnvironment env)
     {
-        var path = Path.Combine(env.ContentRootPath, "Services","CsvLoader","Mobile_Food_Facility_Permit.csv");
+        var path = Path.Combine(env.ContentRootPath, "Services","CsvLoaderService","Mobile_Food_Facility_Permit.csv");
         using (TextFieldParser parser = new TextFieldParser(path))
         {
             parser.TextFieldType = FieldType.Delimited;
