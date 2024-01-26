@@ -16,6 +16,7 @@ public class FoodTruckController : ControllerBase
         _foodTruckService = foodTruckService;
     }
 
+    [HttpGet]
     public IEnumerable<FoodTruck> Get(FoodTruckRequestModel foodTruckRequestModel)
     {
         return _foodTruckService.GetFoodTruckOptions(foodTruckRequestModel);
